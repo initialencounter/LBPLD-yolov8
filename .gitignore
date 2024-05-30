@@ -1,3 +1,6 @@
 /datasets
 *.xls
 *.xlsx
+/xls
+/xlsx
+/yolov8n.pt
