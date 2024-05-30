@@ -1,30 +1,26 @@
 import os
-from openpyxl import load_workbook
-from PIL import Image as PILImage
+from xls_extract import extract_images_from_xls, extract_images_from_xlsx
 
-def extract_images_from_xlsx(xlsx_path, output_dir):
-    try:
-        workbook = load_workbook(xlsx_path)
-        for sheetname in workbook.sheetnames:
-            sheet = workbook[sheetname]
-            for image in sheet._images:
-                img_filename = f"{image.__hash__()}.png"
-                img_path = os.path.join(output_dir, img_filename)
-                PILImage.open(image.ref).convert('RGB').save(img_path)
-    except Exception as e:
-        print(f"Error processing {xlsx_path}: {e}")
 
 def recursive_traversal_and_extract_images(root_dir, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-
+    count = 0
     for subdir, _, files in os.walk(root_dir):
         for file in files:
             file_path = os.path.join(subdir, file)
+            file_path = os.path.abspath(file_path)
             if file.endswith('.xlsx'):
                 extract_images_from_xlsx(file_path, output_dir)
+                count += 1
+            elif file.endswith('.xls'):
+                extract_images_from_xls(file_path, output_dir)
+                count += 1
+            print(count)
 
 if __name__ == "__main__":
-    root_directory = "E:\\2024\\5"
+    root_directory = "./xlsx"
     output_directory = "./datasets/image"
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
     recursive_traversal_and_extract_images(root_directory, output_directory)
