@@ -1,5 +1,8 @@
+"""
+将存档中 xls/xlsx 文件整理出来
+"""
+
 import os
-from PIL import Image as PILImage
 from shutil import copy as shutil_copy
 
 def copy_xlsx(xlsx_path, output_dir):
@@ -20,7 +23,7 @@ def recursive_traversal_and_extract_images(root_dir, output_dir):
 
 if __name__ == "__main__":
     root_directory = "E:\\2023\\2023-07"
-    output_directory = "xls"
+    output_directory = "../xls"
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
     if not os.path.exists(output_directory+"x"):

@@ -1,3 +1,6 @@
+"""
+删除 labelme 标注的数据集中未标注的图片
+"""
 import os
 
 
@@ -15,5 +18,5 @@ def remove_images(root_dir):
 
 
 if __name__ == "__main__":
-    root_directory = "datasets/image"
+    root_directory = "../datasets/image"
     remove_images(root_directory)

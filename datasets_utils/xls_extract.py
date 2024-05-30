@@ -50,4 +50,4 @@ def save_image(image, output_folder):
 
 # 使用示例
 if __name__ == "__main__":
-    extract_images_from_xls(os.path.abspath(r'./xls\1.装箱资料LR-FK202.xls'), './')
+    extract_images_from_xls(os.path.abspath(r'../xls/1.装箱资料LR-FK202.xls'), './')

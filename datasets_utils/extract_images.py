@@ -1,3 +1,7 @@
+"""
+将 xls/xlsx 文件中的图片提取到一个目录中
+"""
+
 import os
 from xls_extract import extract_images_from_xls, extract_images_from_xlsx
 
@@ -19,8 +23,8 @@ def recursive_traversal_and_extract_images(root_dir, output_dir):
             print(count)
 
 if __name__ == "__main__":
-    root_directory = "./xlsx"
-    output_directory = "./datasets/image"
+    root_directory = "../xlsx"
+    output_directory = "../datasets/image"
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
     recursive_traversal_and_extract_images(root_directory, output_directory)

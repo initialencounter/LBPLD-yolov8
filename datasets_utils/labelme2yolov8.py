@@ -1,4 +1,7 @@
-# https://github.com/KdaiP/labelme2YoloV8-segment/blob/main/convert_folder.py
+"""
+将labelemeb 标注好的数据转换成yolov8支持的格式
+https://github.com/KdaiP/labelme2YoloV8-segment/blob/main/convert_folder.py
+"""
 
 import json
 import random
