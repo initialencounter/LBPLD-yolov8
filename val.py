@@ -1,4 +1,4 @@
-from ultralytics import YOLO
+from ultralytics import YOLO # type: ignore
 
 # Load a model
 model = YOLO(r"C:\Users\29115\yolov8\ultralytics\runs\detect\train2\weights\best.pt")  # load a custom model
