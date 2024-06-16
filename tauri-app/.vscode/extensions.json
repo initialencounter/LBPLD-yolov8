@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "monsters.tauri-vscode",
+    "rust-lang.rust-analyzer"
+  ]
+}
